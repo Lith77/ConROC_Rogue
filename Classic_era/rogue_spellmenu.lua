@@ -841,7 +841,7 @@ function ConROC:SpellMenuUpdate()
                             scrollHeight = scrollHeight + math.ceil(lFrame:GetHeight());
                             spellFrameHeight = spellFrameHeight + math.ceil(oItem:GetHeight());
                             lFrame:Show();
-                            allHidden = false;
+                            anyChildVisible = true;
                         else
                             if j == firstItem then
                                 if j == #_spells then
