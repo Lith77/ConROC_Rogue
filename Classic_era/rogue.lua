@@ -84,6 +84,7 @@ local _Garrote = Ass_Ability.GarroteRank1
 local _KidneyShot = Ass_Ability.KidneyShotRank1
 local _Rupture = Ass_Ability.RuptureRank1
 local _SliceandDice = Ass_Ability.SliceandDiceRank1
+local _CheapShot = Ass_Ability.CheapShot
 --Combat
 local _Backstab = Com_Ability.BackstabRank1
 local _BladeFlurry = Com_Ability.BladeFlurry
