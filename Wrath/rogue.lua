@@ -117,6 +117,7 @@ local _DeadlyPoison = Poisons.DeadlyPoisonRank1
 local _MindnumbingPoison = Poisons.MindnumbingPoisonRank1
 local _WoundPoison = Poisons.WoundPoisonRank1
 
+function ConROC:UpdateSpellID()
 --Ranks
 if IsSpellKnown(Ass_Ability.AmbushRank10) then
     _Ambush = Ass_Ability.AmbushRank10
@@ -430,6 +431,8 @@ ids.optionMaxIds = {
     KidneyShot = _KidneyShot,
     Blind = _Blind
 }
+end
+ConROC:UpdateSpellID()
 
 function ConROC:EnableRotationModule()
     self.Description = "Rogue"
@@ -445,19 +448,11 @@ end
 
 function ConROC:PLAYER_TALENT_UPDATE()
     ConROC:SpecUpdate();
-    if ConROCSpellmenuFrame:IsVisible() then
-        ConROCSpellmenuFrame_CloseButton:Hide();
-        ConROCSpellmenuFrame_Title:Hide();
-        ConROCSpellmenuClass:Hide();
-        ConROCSpellmenuFrame_OpenButton:Show();
-        optionsOpened = false;
-        ConROCSpellmenuFrame:SetSize((90) + 14, (15) + 14)
-    else
-        ConROCSpellmenuFrame:SetSize((90) + 14, (15) + 14)
-    end
+    ConROC:closeSpellmenu();
 end
 
 function ConROC.Rogue.Damage(_, timeShift, currentSpell, gcd)
+ConROC:UpdateSpellID()
     --Character
     plvl = UnitLevel("player")
 
