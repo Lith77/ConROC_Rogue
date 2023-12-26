@@ -1,5 +1,5 @@
 Ver 2.0.2
-	-Support for Classic And Classic Wrath
+	-Support for Classic
 	-Started to add support for translations.
 Ver 1.13.7
 	-Tweaked Slice and Dice a little.
